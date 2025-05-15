@@ -13,7 +13,7 @@
     
 - Sorting Algorithms
     
-    ![1706557513963.gif](Java%20Spring%20Boot%20Interview%20Questions%2098a75b3f55204a0aa169e32ed78ca9c2/1706557513963.gif)
+    ![1706557513963.gif](assets/1706557513963.gif)
     
 - If a static block throws an exception , what happens to the class loading process ?
     
@@ -280,7 +280,7 @@
         public Person(String name, List<String> hobbies) {
             this.name = name;
             this.hobbies = new ArrayList<>(hobbies); // Deep copy of list -> whenever object of Person class will be created, 
-    																						     // new hobbies list **will be created**
+                                                                                                 // new hobbies list **will be created**
         }
     
         public String getName() {
@@ -1617,11 +1617,11 @@
     - To handle the exception we use try , catch and finally
     - Hierarch of exception
     
-    ![image.png](Java%20Spring%20Boot%20Interview%20Questions%2098a75b3f55204a0aa169e32ed78ca9c2/image.png)
+    ![image.png](assets/image.png)
     
-    ![image.png](Java%20Spring%20Boot%20Interview%20Questions%2098a75b3f55204a0aa169e32ed78ca9c2/image%201.png)
+    ![image.png](assets/image%201.png)
     
-    ![image.png](Java%20Spring%20Boot%20Interview%20Questions%2098a75b3f55204a0aa169e32ed78ca9c2/image%202.png)
+    ![image.png](assets/image%202.png)
     
     Multi catch block Java 7 → catch ( NullPointerException | SQLException e)
     
@@ -1792,7 +1792,7 @@
             
             // Using a single predicate
             List<Integer> evenNumbers = numbers.stream()
-    	                .filter(isEven)
+                        .filter(isEven)
                     .collect(Collectors.toList());
             System.out.println("Even numbers: " + evenNumbers);
             
@@ -3220,15 +3220,15 @@
     
     ```java
     public interface Runnable{
-    	void run()
+        void run()
     }
     
     // Before java8
     Runnable runnable=new Runnable(){
-    	@Override
-    	public void run(){
-    		Sysout("Before java8");
-    	}
+        @Override
+        public void run(){
+            Sysout("Before java8");
+        }
     }
     new Thread(runnable).start();
     
@@ -4367,7 +4367,7 @@
     
 - ClassNotFoundException vs NoClassDefFoundError
     
-    ![image.png](Java%20Spring%20Boot%20Interview%20Questions%2098a75b3f55204a0aa169e32ed78ca9c2/image%203.png)
+    ![image.png](assets/image%203.png)
     
 - **Why is char[] preferred over String for passwords?**
     
@@ -6442,9 +6442,9 @@
         public static void stringReverser(String input){
         
         
-    	    //reverse a string
-    	     String collect = Stream.of(str).map(word -> 
-    	     new StringBuilder(word).reverse()).collect(Collectors.joining(" "));
+            //reverse a string
+             String collect = Stream.of(str).map(word -> 
+             new StringBuilder(word).reverse()).collect(Collectors.joining(" "));
     
           // ABCD -> 93 94 92 93 (unicodes using chars()) -> {'A','B','C','D'} -> ['A','B','C','D'] -> ['D','C','B','A'] -> ["D","C","B","A"]-> "DCBA"
             String newString = input.chars().mapToObj(c->(char) c).collect(Collectors.toList()).reversed().stream().map(c -> String.valueOf(c)).collect(Collectors.joining());
@@ -10168,11 +10168,11 @@ in Java?
     
 - What is the importance of hashCode() and equals() methods ?
     
-    ![image.png](Java%20Spring%20Boot%20Interview%20Questions%2098a75b3f55204a0aa169e32ed78ca9c2/image%204.png)
+    ![image.png](assets/image%204.png)
     
 - What is the difference between HashSet and TreeSet ?
     
-    ![image.png](Java%20Spring%20Boot%20Interview%20Questions%2098a75b3f55204a0aa169e32ed78ca9c2/image%205.png)
+    ![image.png](assets/image%205.png)
     
 - how to add custom sort in TreeSet ?
 - What does System.gc() and Runtime.gc() methods do ?
@@ -10193,7 +10193,7 @@ in Java?
     
 - Diff b/w HashMap and Hashtable ?
     
-    ![image.png](Java%20Spring%20Boot%20Interview%20Questions%2098a75b3f55204a0aa169e32ed78ca9c2/image%206.png)
+    ![image.png](assets/image%206.png)
     
 - What are the different Collection Views That Map provide ?
     1. Key Set() → allow a map’s contents to be viewed as a set of keys.
@@ -10235,9 +10235,9 @@ in Java?
     
 - What is the difference between Serializable and Externalizable Interfaces ?
     
-    ![image.png](Java%20Spring%20Boot%20Interview%20Questions%2098a75b3f55204a0aa169e32ed78ca9c2/image%207.png)
+    ![image.png](assets/image%207.png)
     
-    ![image.png](Java%20Spring%20Boot%20Interview%20Questions%2098a75b3f55204a0aa169e32ed78ca9c2/image%208.png)
+    ![image.png](assets/image%208.png)
     
 - When can an object Reference  be cast to an interface reference ?
     
@@ -11549,9 +11549,9 @@ in Java?
         @Bean
         public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
             return builder.routes()        
-    		        .route("login-route", r -> r.path("/login")
-    		            .uri("http://localhost:8120/oauth/token")) // Redirect to Authorization Server
-    		            // or lb://user-auth
+                    .route("login-route", r -> r.path("/login")
+                        .uri("http://localhost:8120/oauth/token")) // Redirect to Authorization Server
+                        // or lb://user-auth
                 .route("overdraft_route", r -> r.path("/overdraft/**")
                     .uri("lb://overdraft-service"))
                 .route("uninvested_route", r -> r.path("/uninvested/**")
@@ -13253,7 +13253,7 @@ in Java?
         
         **Example:** A car should depend on an engine interface, not a specific engine type.
         
-        ![image.png](Java%20Spring%20Boot%20Interview%20Questions%2098a75b3f55204a0aa169e32ed78ca9c2/image%209.png)
+        ![image.png](assets/image%209.png)
         
         ```java
         // Abstraction (Interface)
